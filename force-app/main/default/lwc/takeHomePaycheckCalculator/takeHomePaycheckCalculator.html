@@ -1,0 +1,67 @@
+<template>
+  <lightning-card>
+    <div slot="title" class="slds-text-heading_medium">Take-Home-Paycheck</div>
+    <lightning-button variant="brand" label="Calculate" onclick={handleCalculate} slot="actions"></lightning-button>
+    <div class="slds-var-m-around_medium">
+      <template if:true={jobAppData}>
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-var-p-right_x-small slds-size_6-of-12">
+            <lightning-combobox
+              name="fileStatus"
+              label="File Status"
+              value={fileStatusValue}
+              placeholder="Select File Status"
+              options={fileStatusOptions}
+              onchange={handleChangeFileStatus}
+            ></lightning-combobox>
+          </div>
+          <div class="slds-col slds-var-p-left_x-small slds-size_6-of-12">
+            <lightning-combobox
+              name="payFrequency"
+              label="Pay Frequency"
+              value={payFrequencyValue}
+              placeholder="Select Pay Frequency"
+              options={payFrequencyOptions}
+              onchange={handleChangePayFrequency}
+            ></lightning-combobox>
+          </div>
+        </div>
+        <div class="slds-grid slds-text-heading_medium slds-wrap">
+          <div class="slds-col slds-align_absolute-center slds-var-p-top_small slds-size_6-of-12">
+            <p><strong>Gross Pay</strong></p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-top_small slds-size_6-of-12">
+            <p><strong>Income Tax</strong></p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-size_6-of-12">
+            <p>${jobApp.Gross_Pay__c}</p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-size_6-of-12">
+            <p>${jobApp.Income_Tax__c}</p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-top_small slds-size_6-of-12">
+            <p><strong>Medicare Tax</strong></p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-top_small slds-size_6-of-12">
+            <p><strong>Social Security Tax</strong></p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-bottom_small slds-size_6-of-12">
+            <p>${jobApp.Medicare_Tax__c}</p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-bottom_small slds-size_6-of-12">
+            <p>${jobApp.Social_Security_Tax__c}</p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-var-p-top_small slds-border_top slds-size_12-of-12">
+            <p><strong>Final Pay Check</strong></p>
+          </div>
+          <div class="slds-col slds-align_absolute-center slds-size_12-of-12">
+            <p>${jobApp.Final_Pay_Check__c}</p>
+          </div>
+        </div>
+      </template>
+      <template if:false={jobAppData}>
+        <p>No data available</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
