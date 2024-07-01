@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Job_Application__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Job Application Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128197; Plan your resignation if applicable.&lt;/li&gt;&lt;li&gt;&amp;#127958;️ Take some time to relax and recharge.&lt;/li&gt;&lt;li&gt;&amp;#127891; Prepare for your first day of onboarding.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Accepted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128231; Reach out to the hiring manager or recruiter.&lt;/li&gt;&lt;li&gt;&amp;#128198; Follow up on your application via email weekly.&lt;/li&gt;&lt;li&gt;&amp;#128269; Continue identifying and saving similar job opportunities.&lt;/li&gt;&lt;li&gt;&amp;#128222; Set up weekly networking calls to explore similar companies/roles.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Applied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128222; Find and research someone who works at the company and add them as a contact.&lt;/li&gt;&lt;li&gt;&amp;#128203; Set up an informational interview to learn more about the role/company.&lt;/li&gt;&lt;li&gt;&amp;#128260; Identify potential referrals to help get your application on the top of the pile.&lt;/li&gt;&lt;li&gt;&amp;#128736;️ Customize your work achievements using the job description keywords.&lt;/li&gt;&lt;li&gt;&amp;#128228; Submit your application on the company website if possible.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Applying</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128236; Send a follow-up email thanking the interviewer and asking for feedback.&lt;/li&gt;&lt;li&gt;&amp;#128221; Review your notes and reflect on areas of improvement.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128483;️ Prepare your blurb or “tell me about yourself” response.&lt;/li&gt;&lt;li&gt;&amp;#128218; Practice answering behavioral interview questions.&lt;/li&gt;&lt;li&gt;&amp;#129488; Research the company and your interviewers.&lt;/li&gt;&lt;li&gt;&amp;#128187; Set up your virtual interview space and test your tech.&lt;/li&gt;&lt;li&gt;&amp;#128140; Send thank you emails within 24 hours.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Interviewing</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&amp;#128176; Research your market value and know your numbers.&lt;/li&gt;&lt;li&gt;&amp;#128221; Prepare your negotiation scripts.&lt;/li&gt;&lt;li&gt;✔️ Evaluate your offer and decline or accept.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Negotiating</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Rating__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Complete the following tasks:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;✅ Check if the job description aligns with your interests and values.&lt;/li&gt;&lt;li&gt;&amp;#128269; Review the highlighted skills to see if the role is a good fit.&lt;/li&gt;&lt;li&gt;&amp;#127775; Research the company or role and mark your excitement level.&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Saved</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

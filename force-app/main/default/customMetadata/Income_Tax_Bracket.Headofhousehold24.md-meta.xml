@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Head of household 24</label>
+    <protected>false</protected>
+    <values>
+        <field>Filling_Status__c</field>
+        <value xsi:type="xsd:string">Head of household</value>
+    </values>
+    <values>
+        <field>High_Tax_Bracket__c</field>
+        <value xsi:type="xsd:double">191950.0</value>
+    </values>
+    <values>
+        <field>Low_Tax_Bracket__c</field>
+        <value xsi:type="xsd:double">100500.0</value>
+    </values>
+    <values>
+        <field>Standard_Deduction__c</field>
+        <value xsi:type="xsd:double">21900.0</value>
+    </values>
+    <values>
+        <field>Tax_Rate__c</field>
+        <value xsi:type="xsd:double">24.0</value>
+    </values>
+</CustomMetadata>
