@@ -1,0 +1,168 @@
+<template>
+  <lightning-card>
+    <template lwc:if={records}>
+      <!--Title: Job title, location, and count Result Start-->
+      <div slot="title" class="slds-text-heading_large">
+        {job} jobs in {location}
+        <p class="slds-text-body_small">{jobCount} jobs</p>
+      </div>
+      <!--Title: Job title, location, and count Result End-->
+    </template>
+    <!--Job title, location, Search button, Salary, and Date Posted Start-->
+    <div class="slds-grid slds-wrap slds-var-p-bottom_small">
+      <div class="slds-col slds-var-p-horizontal_medium slds-size_5-of-12">
+        <!--Job Title Input Start-->
+        <div class="slds-input-has-icon slds-input-has-icon_left">
+          <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+          </svg>
+          <input
+            type="text"
+            id="jobInput"
+            placeholder="Title, skill or company"
+            oninput={handleTitleInput}
+            class="slds-input"
+          />
+        </div>
+        <!--Job Title Input End-->
+      </div>
+      <div class="slds-col slds-var-p-horizontal_medium slds-size_5-of-12">
+        <!-- Job Location Input Start-->
+        <div class="slds-input-has-icon slds-input-has-icon_left">
+          <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#checkin"></use>
+          </svg>
+          <input
+            type="text"
+            id="locationInput"
+            placeholder="City, state or zip code"
+            oninput={handleLocationInput}
+            class="slds-input"
+          />
+        </div>
+      </div>
+      <!--Job Location Input End-->
+      <div class="slds-col slds-var-p-horizontal_medium slds-size_2-of-12">
+        <!--Search Button Start-->
+        <lightning-button
+          variant="brand"
+          label="Search"
+          onclick={handleSearchClick}
+          class="slds-grid slds-grid_align-end"
+        ></lightning-button>
+        <!--Search Button End-->
+      </div>
+      <!--Salary Picklist Start-->
+      <lightning-combobox
+        name="Salary"
+        label="Salary"
+        value={salaryValue}
+        onchange={handleSalaryChange}
+        options={salaryOptions}
+        class="slds-var-p-horizontal_medium"
+      >
+      </lightning-combobox>
+      <!--Salary Picklist End-->
+      <!--Date Posted Picklist Start-->
+      <lightning-combobox
+        name="datePosted"
+        label="Date Posted"
+        value={datePostedValue}
+        onchange={handleDatePostedChange}
+        options={datePostedOptions}
+        class="slds-var-p-horizontal_medium"
+      >
+      </lightning-combobox>
+      <!--Date Posted Picklist End-->
+    </div>
+    <!--Job title, location, Search button, Salary, and Date Posted End-->
+    <template lwc:if={records}>
+      <div class="slds-grid slds-wrap slds-var-p-horizontal_medium slds-var-p-bottom_small">
+        <!--Select All Checkbox Start-->
+        <lightning-input
+          class="slds-col slds-size_6-of-12"
+          type="checkbox"
+          label="Select All"
+          onchange={handleSelectAll}
+        ></lightning-input>
+        <!--Select All Checkbox End-->
+        <lightning-button
+          class="slds-col slds-grid slds-grid_align-end slds-size_6-of-12"
+          variant="brand"
+          label="Save"
+          onclick={handleSave}
+        ></lightning-button>
+      </div>
+      <template for:each={records} for:item="record" for:index="index">
+        <div key={record.Id} class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+          <!--Job Items Start-->
+          <div class="slds-box">
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_11-of-12">
+                <!--Job Item Body Start-->
+                <p class="slds-text-heading_medium">
+                  <b>{record.Position_Title__c}</b>
+                </p>
+                {record.Salary__c}<br />
+                <p>
+                  <lightning-formatted-rich-text value={record.Description__c}></lightning-formatted-rich-text>
+                </p>
+                <br />
+                <b>{record.Company_Name__c}</b><br />{record.Location__c}<br />{record.Posted_Date__c}
+              </div>
+              <!--Job Item Body End-->
+              <div class="slds-grid slds-grid_align-end slds-col slds-size_1-of-12">
+                <!--Job Item Checkbox Start-->
+                <lightning-input
+                  type="checkbox"
+                  data-index={index}
+                  onchange={handleRecordSelection}
+                  variant="label-hidden"
+                  checked={record.isSelected}
+                ></lightning-input>
+                <!--Job Item Checkbox End-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <!--Job Items End-->
+    </template>
+    <div slot="footer" class="slds-align_absolute-center">
+      <lightning-layout>
+        <lightning-layout-item flexibility="auto, no-grow">
+          <template if:true={disableButton}>
+            <div>
+              <lightning-button-icon
+                icon-name="utility:chevronleft"
+                onclick={handlePrevioustPageClick}
+              ></lightning-button-icon>
+            </div>
+          </template>
+          <template if:false={disableButton}>
+            <div>
+              <lightning-button-icon
+                icon-name="utility:chevronleft"
+                onclick={handlePrevioustPageClick}
+                disabled=""
+              ></lightning-button-icon>
+            </div>
+          </template>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto, no-grow">
+          <div class="slds-var-p-horizontal_medium slds-text-heading_medium slds-var-p-top_xx-small">
+            <b>{page}</b>
+          </div>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto, no-grow">
+          <div>
+            <lightning-button-icon
+              icon-name="utility:chevronright"
+              onclick={handleNextPageClick}
+            ></lightning-button-icon>
+          </div>
+        </lightning-layout-item>
+      </lightning-layout>
+    </div>
+  </lightning-card>
+</template>
